@@ -1,0 +1,364 @@
+---
+import WutraumImage from "../../components/WutraumImage.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Wutraum">
+    <WutraumImage />
+
+    <section class="wutraum-intro">
+        <div class="wutraum-intro-inner">
+            <p class="wutraum-intro-label">Wenn Wut keinen Raum bekommt</p>
+            <div class="wutraum-copy">
+                <p>
+                    Wenn Wut keinen bewussten Raum bekommt, zeigt sie sich oft
+                    dort, wo Grenzen längst überschritten wurden.
+                </p>
+                <p>Indirekt, zu spät oder zerstörerisch.</p>
+            </div>
+        </div>
+        <p class="wutraum-intro-statement">
+            Ich halte Räume, in denen du dieser Kraft klar, verkörpert und
+            sicher begegnen kannst.
+        </p>
+    </section>
+
+    <section class="wutraum-format-note">
+        <div class="wutraum-format-note-inner">
+            <p class="wutraum-eyebrow">Formate und Orte</p>
+            <div class="wutraum-location-chips" aria-label="Formate und Orte">
+                <span>Online</span>
+                <span>Berlin</span>
+                <span>Mecklenburg-Vorpommern</span>
+                <span>Festivals</span>
+            </div>
+            <p class="wutraum-format-copy">
+                Alleine oder gemeinsam mit Co-Raumhaltern.
+            </p>
+        </div>
+    </section>
+
+    <section class="wutraum-qualities">
+    <div class="wutraum-qualities-inner">
+        <article class="wutraum-quality-card">
+            <p class="wutraum-quality-number">01</p>
+            <h2>Klarer Rahmen</h2>
+            <p>
+                Ein Raum, in dem Intensität möglich ist, ohne dass Sicherheit
+                und Verantwortung verloren gehen.
+            </p>
+        </article>
+
+        <article class="wutraum-quality-card">
+            <p class="wutraum-quality-number">02</p>
+            <h2>Körper & Stimme</h2>
+            <p>Kontakt mit Wut über Bewegung, Stimme und Ausdruck.</p>
+        </article>
+
+        <article class="wutraum-quality-card">
+            <p class="wutraum-quality-number">03</p>
+            <h2>Grenze & Kontakt</h2>
+            <p>Ein Erforschen von Ja, Nein, Nähe, Abstand und Beziehung.</p>
+        </article>
+    </div>
+    </section>
+
+    <section class="wutraum-cta">
+    <div class="wutraum-cta-inner">
+        <h2>Manche Wut sieht nicht aus wie Wut.</h2>
+        <div class="wutraum-cta-copy">
+            <p>
+                Sie zeigt sich als Erschöpfung, als Rückzug, als Angepasstsein
+                oder als ein Nein, das im Körper längst da ist, aber nicht über
+                die Lippen kommt.
+            </p>
+            <p>
+                In den Räumen für bewusste Wut geht es nicht darum, lauter oder
+                härter zu werden oder die Wut los zu werden. Es geht darum,
+                wieder zu spüren, wo deine Grenze liegt und welche Kraft dort
+                wartet.
+            </p>
+        </div>
+        <a class="wutraum-cta-link" href="mailto:ta.kupler@gmail.com">Kontakt aufnehmen</a>
+    </div>
+    </section>
+</BaseLayout>
+
+<style>
+    .wutraum-intro,
+    .wutraum-format-note,
+    .wutraum-qualities {
+        background: #f3eee6;
+    }
+
+    .wutraum-intro {
+        padding: clamp(3rem, 6vw, 5.25rem) 1.5rem clamp(2rem, 4vw, 3rem);
+    }
+
+    .wutraum-intro-inner {
+        display: grid;
+        grid-template-columns: 12rem 1fr;
+        gap: clamp(1.5rem, 5vw, 5rem);
+        width: min(980px, 100%);
+        margin: 0 auto;
+    }
+
+    .wutraum-lead {
+        max-width: 900px;
+        margin: 0 0 2rem;
+        color: #211f1c;
+        font-family: var(--font-serif);
+        font-size: clamp(3.2rem, 6vw, 7rem);
+        font-weight: 400;
+        line-height: 0.92;
+        letter-spacing: -0.06em;
+    }
+
+    .wutraum-copy {
+        max-width: 760px;
+    }
+
+    .wutraum-intro-label,
+    .wutraum-eyebrow {
+        margin: 0;
+        color: rgb(34 31 28 / 0.52);
+        font-size: 0.8rem;
+        font-weight: 600;
+        line-height: 1.2;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+    }
+
+    .wutraum-copy p {
+        margin: 0;
+        color: #211f1c;
+        font-size: clamp(1.05rem, 1.2vw, 1.2rem);
+        line-height: 1.7;
+        letter-spacing: -0.01em;
+    }
+
+    .wutraum-copy p + p {
+        margin-top: 1rem;
+    }
+
+    .wutraum-intro-statement {
+        width: min(980px, 100%);
+        max-width: 15ch;
+        margin: clamp(2.5rem, 5vw, 4rem) auto 0;
+        color: #211f1c;
+        font-family: "Fraunces", serif;
+        font-size: clamp(2.6rem, 4.8vw, 5.25rem);
+        font-weight: 400;
+        line-height: 0.94;
+        letter-spacing: -0.055em;
+    }
+
+    .wutraum-format-note {
+        padding: clamp(2.5rem, 5vw, 4rem) 1.5rem clamp(4rem, 6vw, 5rem);
+    }
+
+    .wutraum-format-note-inner {
+        width: min(1120px, 100%);
+        margin: 0 auto;
+        padding-top: clamp(2rem, 4vw, 3rem);
+        border-top: 1px solid rgb(34 31 28 / 0.14);
+    }
+
+    .wutraum-location-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin-top: 1.25rem;
+    }
+
+    .wutraum-location-chips span {
+        display: inline-flex;
+        align-items: center;
+        min-height: 2.5rem;
+        padding: 0.6rem 1rem;
+        border: 1px solid rgb(191 108 74 / 0.34);
+        border-radius: 999px;
+        background: rgb(191 108 74 / 0.06);
+        color: #211f1c;
+        font-size: 1rem;
+        line-height: 1;
+    }
+
+    .wutraum-format-copy {
+        max-width: 38rem;
+        margin: 0;
+        margin-top: 1rem;
+        color: rgb(34 31 28 / 0.62);
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .wutraum-qualities {
+        padding: 0 1.5rem clamp(6rem, 12vw, 10rem);
+    }
+
+    .wutraum-qualities-inner {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        width: min(1120px, 100%);
+        margin: 0 auto;
+    }
+
+    .wutraum-quality-card {
+        min-height: clamp(23rem, 30vw, 29rem);
+        padding: clamp(1.5rem, 3vw, 2.25rem);
+        border: 1px solid rgb(34 31 28 / 0.12);
+        border-top: 2px solid rgb(191 108 74 / 0.45);
+        border-radius: 1.25rem;
+        background:
+            linear-gradient(180deg, rgb(191 108 74 / 0.05), transparent 45%),
+            rgb(255 248 239 / 0.36);
+    }
+
+    .wutraum-quality-number {
+        margin: 0 0 1.5rem;
+        color: #c97b5a;
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+    }
+
+    .wutraum-quality-card h2 {
+        margin: 0 0 1rem;
+        color: #211f1c;
+        font-family: var(--font-serif);
+        font-size: clamp(1.8rem, 2.4vw, 2.7rem);
+        font-weight: 400;
+        line-height: 1;
+        letter-spacing: -0.055em;
+    }
+
+    .wutraum-quality-card p {
+        margin: 0;
+        color: rgb(34 31 28 / 0.66);
+        font-size: clamp(1rem, 1.05vw, 1.08rem);
+        line-height: 1.65;
+        letter-spacing: -0.01em;
+    }
+
+    .wutraum-cta {
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        padding: clamp(5rem, 11vw, 9rem) 1.5rem;
+        background: linear-gradient(135deg, #18140f, #3b3028);
+        color: #f6f0e7;
+    }
+
+    .wutraum-cta-inner {
+        width: min(980px, 100%);
+        margin: 0 auto;
+    }
+
+    .wutraum-cta-kicker {
+        margin: 0 0 1.5rem;
+        color: #e4a080;
+        font-size: 0.8rem;
+        font-weight: 600;
+        line-height: 1.2;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+    }
+
+    .wutraum-cta h2 {
+        max-width: 16ch;
+        margin: 0;
+        font-family: "Fraunces", serif;
+        font-size: clamp(2.8rem, 5.5vw, 6rem);
+        font-weight: 400;
+        line-height: 0.94;
+        letter-spacing: -0.05em;
+    }
+
+    .wutraum-cta-copy {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: clamp(1.5rem, 5vw, 5rem);
+        max-width: 52rem;
+        margin-top: clamp(2.5rem, 5vw, 4rem);
+    }
+
+    .wutraum-cta-copy p {
+        margin: 0;
+        color: rgb(246 240 231 / 0.82);
+        font-size: clamp(1rem, 1.2vw, 1.15rem);
+        line-height: 1.7;
+    }
+
+    .wutraum-cta-link {
+        display: inline-block;
+        margin-top: clamp(2.5rem, 5vw, 4rem);
+        color: #f6f0e7;
+        font-weight: 500;
+        text-decoration-color: #e4a080;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 0.35rem;
+    }
+
+    .wutraum-cta-link:hover {
+        color: #e4a080;
+    }
+
+    @media (max-width: 900px) {
+        .wutraum-intro-inner {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        .wutraum-qualities-inner {
+            grid-template-columns: 1fr;
+        }
+
+        .wutraum-cta-copy {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        .wutraum-quality-card {
+            min-height: auto;
+        }
+
+    }
+
+    @media (max-width: 768px) {
+        .wutraum-intro {
+            padding: 3rem 1.25rem 2.25rem;
+        }
+
+        .wutraum-lead {
+            font-size: clamp(2.7rem, 13vw, 4.2rem);
+            line-height: 0.95;
+        }
+
+        .wutraum-copy p {
+            font-size: 1.08rem;
+            line-height: 1.65;
+        }
+
+        .wutraum-format-note {
+            padding-inline: 1.25rem;
+            padding-bottom: 2.5rem;
+        }
+
+        .wutraum-intro-statement {
+            font-size: clamp(2.4rem, 11vw, 4rem);
+        }
+
+        .wutraum-qualities {
+            padding: 0 1.25rem 6rem;
+        }
+
+        .wutraum-quality-card {
+            border-radius: 1rem;
+        }
+
+        .wutraum-cta {
+            padding-inline: 1.25rem;
+        }
+    }
+</style>

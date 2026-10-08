@@ -1,0 +1,86 @@
+<section class="wutraum-hero" aria-labelledby="wutraum-heading">
+    <div class="wutraum-hero-overlay" aria-hidden="true"></div>
+    <div class="hero-content">
+        <h1 id="wutraum-heading">
+            Wut ist nicht nur Reaktion.<br />Sie ist auch <span class="accent"
+                >Ressource</span
+            >.
+        </h1>
+    </div>
+</section>
+
+<style>
+    .wutraum-hero {
+        --wutraum-cream: #f6f0e7;
+        --wutraum-ink: #18140f;
+        --wutraum-muted-ink: #3b3028;
+        --wutraum-line: #8c7564;
+        --wutraum-orange: #c97b5a;
+        --wutraum-dark-orange: #a84d32;
+        --wutraum-soft-orange: #e4a080;
+        --wutraum-rust: #8f3d2f;
+
+        position: relative;
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        height: clamp(560px, 76vh, 700px);
+        overflow: hidden;
+        background-color: var(--wutraum-ink);
+        background-image: url("/images/rage_boundary.jpg");
+        background-position: center 14%;
+        background-repeat: no-repeat;
+        background-size: 112% auto;
+        --font-serif: "Fraunces", serif;
+    }
+
+    .wutraum-hero-overlay {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        background: linear-gradient(
+            to top,
+            rgb(from var(--wutraum-ink) r g b / 0.62) 0%,
+            rgb(from var(--wutraum-ink) r g b / 0.28) 36%,
+            rgb(from var(--wutraum-ink) r g b / 0.04) 100%
+        );
+        pointer-events: none;
+    }
+
+    .hero-content {
+        position: absolute;
+        left: 50%;
+        z-index: 2;
+        bottom: clamp(1.5rem, 4vh, 2.5rem);
+        width: min(1100px, calc(100% - 3rem));
+        transform: translateX(-50%);
+    }
+
+    #wutraum-heading {
+        color: var(--wutraum-cream);
+        font-family: var(--font-serif);
+        font-size: clamp(3.2rem, 5.8vw, 4rem);
+        font-weight: 400;
+        line-height: 0.88;
+        letter-spacing: -0.05em;
+    }
+
+    #wutraum-heading .accent {
+        color: var(--wutraum-orange);
+    }
+
+    @media (max-width: 768px) {
+        .wutraum-hero {
+            height: clamp(480px, 70vh, 640px);
+            background-position: center 25%;
+        }
+
+        .hero-content {
+            bottom: 2.25rem;
+            width: calc(100% - 2rem);
+        }
+
+        #wutraum-heading {
+            font-size: clamp(2.75rem, 13vw, 4.5rem);
+        }
+    }
+</style>

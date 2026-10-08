@@ -1,0 +1,14 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="Start">
+	<div id="start" tabindex="-1"><Hero /></div>
+</BaseLayout>
+
+<style>
+	#start:focus {
+		outline: none;
+	}
+</style>

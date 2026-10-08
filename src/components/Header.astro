@@ -1,0 +1,149 @@
+---
+const navigation = [
+	{ label: 'Start', href: '/' },
+	{ label: 'Wutraum', href: '/angebote/wutraum' },
+	{ label: 'Über mich', href: '/ueber-mich' },
+	{ label: 'Kontakt', href: 'mailto:ta.kupler@gmail.com' },
+];
+
+const currentPath = Astro.url.pathname;
+const isCurrent = (href: string) =>
+	currentPath === href || (href === '/angebote' && currentPath.startsWith('/angebote/'));
+---
+
+<header class="site-header">
+	<nav class="desktop-navigation" aria-label="Hauptnavigation">
+		<ul>
+			{
+				navigation.map(({ label, href }) => (
+					<li>
+						<a href={href} aria-current={isCurrent(href) ? 'page' : undefined}>
+							{label}
+						</a>
+					</li>
+				))
+			}
+		</ul>
+	</nav>
+	<div class="mobile-header">
+		<a class="mobile-brand" href="/" aria-current={isCurrent('/') ? 'page' : undefined}>Start</a>
+		<details class="mobile-menu">
+			<summary>Menü</summary>
+			<nav class="mobile-navigation" aria-label="Mobile Hauptnavigation">
+				<ul>
+					{
+						navigation.map(({ label, href }) => (
+							<li>
+								<a href={href} aria-current={isCurrent(href) ? 'page' : undefined}>
+									{label}
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</nav>
+		</details>
+	</div>
+</header>
+
+<style>
+	.site-header {
+		padding: 1.25rem clamp(1.5rem, 5vw, 5rem) 0.75rem;
+	}
+
+	.mobile-header {
+		display: none;
+	}
+
+	ul {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 0.5rem 1.75rem;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	a {
+		display: inline-block;
+		padding: 0.35rem 0;
+		color: #232b24;
+		font-size: 0.95rem;
+		text-decoration: none;
+		text-underline-offset: 0.35rem;
+	}
+
+	a:hover,
+	a[aria-current='page'] {
+		color: #3e5c58;
+		text-decoration: underline;
+		text-decoration-thickness: 1px;
+	}
+
+	a[aria-current='page'] {
+		text-decoration-color: rgb(201 123 90 / 0.65);
+		text-underline-offset: 0.45rem;
+	}
+
+	a:focus-visible {
+		outline: 2px solid #b23a2a;
+		outline-offset: 4px;
+	}
+
+	@media (max-width: 34rem) {
+		.site-header {
+			position: relative;
+			z-index: 3;
+			min-height: 4.25rem;
+			padding: 0 1.25rem;
+		}
+
+		.desktop-navigation {
+			display: none;
+		}
+
+		.mobile-header {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			min-height: 4.25rem;
+		}
+
+		.mobile-brand {
+			font-family: 'Fraunces', serif;
+			font-size: 1.15rem;
+			font-weight: 500;
+		}
+
+		.mobile-menu {
+			position: static;
+		}
+
+		.mobile-menu > summary {
+			padding: 0.5rem 0;
+			font-size: 0.95rem;
+		}
+
+		.mobile-navigation {
+			position: absolute;
+			top: 100%;
+			right: 0;
+			left: 0;
+			padding: 1.25rem 1.5rem 1.75rem;
+			background: #f4efe6;
+		}
+
+		.mobile-navigation ul {
+			display: flex;
+			align-items: flex-start;
+			flex-direction: column;
+			gap: 0.5rem;
+		}
+
+		.mobile-navigation a {
+			padding: 0.5rem 0;
+			font-size: 1.05rem;
+		}
+	}
+</style>

@@ -1,0 +1,63 @@
+---
+import ContentPage from "../layouts/ContentPage.astro";
+---
+
+<ContentPage
+    intro="Hier findest du kommende Räume und Gelegenheiten zur Begegnung."
+>
+    <section class="termine-status" aria-labelledby="termine-status-heading">
+        <p class="eyebrow">Im Moment</p>
+        <h2 id="termine-status-heading">Es sind keine Termine geplant.</h2>
+        <p>
+            Wenn du dir einen Raum wünschst oder eine Frage hast, kannst du dich
+            gerne bei mir melden.
+        </p>
+        <a class="contact-link" href="mailto:ta.kupler@gmail.com">Kontakt aufnehmen</a>
+    </section>
+</ContentPage>
+
+<style>
+    .termine-status {
+        max-width: 36rem;
+        padding-top: clamp(1rem, 3vw, 2rem);
+    }
+
+    .eyebrow {
+        margin: 0 0 1rem;
+        color: #3e5c58;
+        font-size: 0.8rem;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+    }
+
+    h2 {
+        margin: 0;
+        color: #232b24;
+        font-family: "Fraunces", serif;
+        font-size: clamp(2rem, 4vw, 3.5rem);
+        font-weight: 400;
+        line-height: 1;
+        letter-spacing: -0.04em;
+    }
+
+    p:not(.eyebrow) {
+        margin: 1.5rem 0 0;
+        font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+    }
+
+    .contact-link {
+        display: inline-block;
+        margin-top: 2rem;
+        padding: 0.75rem 1.15rem;
+        background: #c97b5a;
+        color: #232b24;
+        font-weight: 500;
+        line-height: 1.5;
+        text-decoration: none;
+    }
+
+    .contact-link:hover {
+        filter: brightness(0.96);
+    }
+</style>

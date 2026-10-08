@@ -1,0 +1,152 @@
+---
+const imagePath = "/images/duene.jpg";
+---
+
+<section class="hero" aria-labelledby="hero-heading">
+    <img
+        class="hero-image"
+        src={imagePath}
+        alt="Ein stiller Blick über Dünengras, Strand und Meer unter einem weiten Himmel."
+        width="2000"
+        height="1126"
+        loading="eager"
+        decoding="async"
+    />
+    <div class="hero-content">
+        <h1 id="hero-heading">
+            <span><span class="accent">Fühlen</span> ist anders,</span>
+            <span>wenn jemand mit der Welle bleibt.</span>
+        </h1>
+        <p class="hero-copy">
+            Manchmal ist Fühlen eine große Welle. Manchmal ist es nur eine
+            Ahnung. Ich begleite dich in deinen Gezeiten. In einem Raum, in dem
+            du aus dem Kopf ins Spüren und aus der Reaktion in Kontakt finden
+            darfst.
+        </p>
+        <div class="actions hero-actions">
+            <a class="button button-primary" href="/angebote/wutraum">Wutraum entdecken</a>
+            <a class="button button-secondary" href="mailto:ta.kupler@gmail.com"
+                >Kontakt aufnehmen</a
+            >
+        </div>
+    </div>
+</section>
+
+<style>
+    .hero {
+        position: relative;
+        display: grid;
+        height: 76vh;
+        overflow: hidden;
+        border-radius: clamp(1.75rem, 3.2vw, 3.5rem);
+        isolation: isolate;
+    }
+
+    .hero-image {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .hero-image {
+        z-index: -1;
+        filter: saturate(0.86) sepia(0.08) brightness(1.04) contrast(0.94);
+        object-fit: cover;
+        object-position: center 38%;
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-end;
+        max-width: 54rem;
+        padding: clamp(2rem, 6vw, 5rem) clamp(2rem, 6vw, 5rem)
+            clamp(3.5rem, 7vw, 6rem);
+        color: #f4efe6;
+    }
+
+    h1 {
+        margin: 0;
+        color: #f4efe6;
+        font-family: "Fraunces", serif;
+        font-size: clamp(2.7rem, 4.6vw, 4.7rem);
+        font-weight: 400;
+        line-height: 1.02;
+        letter-spacing: -0.035em;
+        text-shadow: 0 2px 18px rgb(35 43 36 / 0.28);
+    }
+
+    h1 span {
+        display: block;
+    }
+
+    h1 .accent {
+        display: inline;
+        color: #c97b5a;
+    }
+
+    .hero-copy {
+        max-width: 40rem;
+        margin: 1.75rem 0 0;
+        color: #f4efe6;
+        font-size: clamp(1rem, 1.4vw, 1.2rem);
+        text-shadow: 0 2px 18px rgb(35 43 36 / 0.28);
+    }
+
+    .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.9rem;
+        margin-top: 2.25rem;
+    }
+
+    .button {
+        padding: 0.75rem 1.15rem;
+        font-weight: 500;
+        line-height: 1.5;
+        text-decoration: none;
+        transition:
+            background-color 200ms ease-out,
+            color 200ms ease-out,
+            filter 200ms ease-out;
+    }
+
+    .button-primary {
+        background: #c97b5a;
+        color: #232b24;
+    }
+
+    .button-secondary {
+        background: #f4efe6;
+        color: #232b24;
+    }
+
+    .button:hover {
+        filter: brightness(0.96);
+    }
+
+    .button:focus-visible {
+        outline: 2px solid #f4efe6;
+        outline-offset: 4px;
+    }
+
+    @media (max-width: 40rem) {
+        .hero {
+            height: 75svh;
+        }
+
+        .hero-content {
+            padding: 2rem 2rem 3.5rem;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .button {
+            transition: none;
+        }
+    }
+</style>

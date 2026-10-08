@@ -1,0 +1,232 @@
+---
+import ContentPage from '../../layouts/ContentPage.astro';
+---
+
+<ContentPage
+    title="Räume & Angebote"
+    intro="Verschiedene Räume für das, was sich in dir zeigen und bewegen möchte."
+>
+    <nav aria-label="Angebote">
+        <p class="group-label feelings-label">Räume für bewusste Gefühle</p>
+
+        <a class="threshold one-to-one" href="/angebote/eins-zu-eins-begleitung">
+            <span class="threshold-number">01</span>
+            <span class="threshold-content">
+                <span class="threshold-title">1:1 Begleitung</span>
+                <span class="threshold-detail">
+                    Ein persönlicher Raum für das, was gerade da ist.
+                </span>
+            </span>
+            <span class="threshold-direction" aria-hidden="true">↗</span>
+        </a>
+
+        <a class="threshold anger" href="/angebote/wutraum">
+            <span class="threshold-number">02</span>
+            <span class="threshold-content">
+                <span class="threshold-title">Wutraum</span>
+                <span class="threshold-detail">
+                    Begegnung mit Grenze, Kraft und Ausdruck.
+                </span>
+            </span>
+            <span class="threshold-direction" aria-hidden="true">↗</span>
+        </a>
+
+        <p class="group-label ritual-label">Körper & Ritual</p>
+
+        <a class="threshold kambo" href="/angebote/kambo">
+            <span class="threshold-number">03</span>
+            <span class="threshold-content">
+                <span class="threshold-title">Kambô</span>
+            </span>
+            <span class="threshold-direction" aria-hidden="true">↗</span>
+        </a>
+    </nav>
+</ContentPage>
+
+<style>
+    nav {
+        display: grid;
+        gap: 0;
+    }
+
+    .group-label,
+    .threshold-number {
+        margin: 0;
+        color: #3e5c58;
+        font-size: 0.8rem;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+    }
+
+    .group-label {
+        position: relative;
+        z-index: 1;
+        width: fit-content;
+        padding: 0.5rem 0;
+    }
+
+    .feelings-label {
+        margin-bottom: clamp(1.5rem, 4vw, 3rem);
+    }
+
+    .ritual-label {
+        margin: clamp(6rem, 14vw, 10rem) 0 clamp(1.5rem, 4vw, 3rem);
+        color: #c97b5a;
+    }
+
+    .threshold {
+        position: relative;
+        display: grid;
+        grid-template-columns: minmax(3rem, 12rem) minmax(0, 1fr) auto;
+        align-items: end;
+        gap: 1rem;
+        min-height: clamp(16rem, 30vw, 22rem);
+        color: #232b24;
+        font-family: "Fraunces", serif;
+        text-decoration: none;
+        transition:
+            transform 650ms ease-out,
+            color 650ms ease-out;
+    }
+
+    .threshold::before {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        height: 1px;
+        content: "";
+        background: rgb(35 43 36 / 0.16);
+        transform-origin: left;
+        transition: transform 650ms ease-out;
+    }
+
+    .threshold-number {
+        align-self: start;
+        padding-top: 1.5rem;
+    }
+
+    .threshold-content {
+        display: grid;
+        gap: 1rem;
+        padding: clamp(4rem, 9vw, 7rem) 0 clamp(2rem, 5vw, 4rem);
+    }
+
+    .threshold-title {
+        max-width: 11ch;
+        font-size: clamp(3rem, 7vw, 6.5rem);
+        font-weight: 400;
+        line-height: 0.9;
+        letter-spacing: -0.06em;
+    }
+
+    .threshold-detail {
+        max-width: 25rem;
+        font-family: "Karla", sans-serif;
+        font-size: clamp(1rem, 1.4vw, 1.15rem);
+        line-height: 1.65;
+    }
+
+    .threshold-direction {
+        padding: 0 0 clamp(2rem, 5vw, 4rem);
+        color: #c97b5a;
+        font-family: "Karla", sans-serif;
+        font-size: clamp(1.5rem, 2vw, 2rem);
+        line-height: 1;
+        transition: transform 650ms ease-out;
+    }
+
+    .one-to-one {
+        max-width: 42rem;
+    }
+
+    .anger {
+        width: 100vw;
+        min-height: clamp(24rem, 47vw, 35rem);
+        margin-left: calc(50% - 50vw);
+        margin-top: clamp(5rem, 12vw, 9rem);
+        padding-right: clamp(1.5rem, 8vw, 8rem);
+        padding-left: clamp(1.5rem, 8vw, 8rem);
+        background: #232b24;
+        color: #f4efe6;
+    }
+
+    .anger::before {
+        background: rgb(244 239 230 / 0.26);
+    }
+
+    .anger .threshold-number {
+        color: #c97b5a;
+    }
+
+    .anger .threshold-title {
+        max-width: 8ch;
+        font-size: clamp(4.5rem, 11vw, 10rem);
+    }
+
+    .anger .threshold-detail {
+        max-width: 21rem;
+    }
+
+    .kambo {
+        min-height: clamp(20rem, 37vw, 30rem);
+        margin-left: clamp(2rem, 14vw, 12rem);
+    }
+
+    .kambo .threshold-content {
+        align-self: center;
+        padding-bottom: clamp(3rem, 7vw, 6rem);
+    }
+
+    .kambo .threshold-title {
+        max-width: none;
+        font-size: clamp(4rem, 9vw, 8rem);
+    }
+
+    .threshold:hover,
+    .threshold:focus-visible {
+        transform: translateY(-0.35rem);
+    }
+
+    .threshold:hover::before,
+    .threshold:focus-visible::before {
+        transform: scaleX(0.88);
+    }
+
+    .threshold:hover .threshold-direction,
+    .threshold:focus-visible .threshold-direction {
+        transform: translate(0.35rem, -0.35rem);
+    }
+
+    .threshold:focus-visible {
+        outline: 2px solid #b23a2a;
+        outline-offset: 0.5rem;
+    }
+
+    @media (max-width: 44rem) {
+        .threshold {
+            grid-template-columns: 1fr auto;
+        }
+
+        .threshold-number {
+            grid-column: 1 / -1;
+            padding-top: 1.25rem;
+        }
+
+        .threshold-content {
+            padding-top: 1.5rem;
+        }
+
+        .anger {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            padding-right: 1rem;
+            padding-left: 1rem;
+        }
+
+        .kambo {
+            margin-left: 0;
+        }
+    }
+</style>
